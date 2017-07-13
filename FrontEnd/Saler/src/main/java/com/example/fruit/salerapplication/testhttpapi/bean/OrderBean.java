@@ -13,7 +13,9 @@ public class OrderBean implements Serializable {
     private static final long serialVersionUID = -1L;
     long orderId;
     long salerId;
+    String storeName;
     long buyerId;
+    String buyerName;
     float price;
     ArrayList<GoodsBean> goods;
     String address;
@@ -24,7 +26,7 @@ public class OrderBean implements Serializable {
     public OrderBean() {
     }
 
-    public OrderBean(long orderId, long salerId, long buyerId, float price, ArrayList<GoodsBean> goods, String address, Date odate, String status, Date date) {
+    public OrderBean(long orderId, long salerId, String storeName, long buyerId,String buyerName, float price, ArrayList<GoodsBean> goods, String address, Date odate, String status, Date date) {
         this.orderId = orderId;
         this.salerId = salerId;
         this.buyerId = buyerId;
@@ -34,6 +36,24 @@ public class OrderBean implements Serializable {
         this.odate = odate;
         this.status = status;
         this.date = date;
+        this.buyerName = buyerName;
+        this.storeName = storeName;
+    }
+
+    public String getBuyerName() {
+        return buyerName;
+    }
+
+    public void setBuyerName(String buyerName) {
+        this.buyerName = buyerName;
+    }
+
+    public String getStoreName() {
+        return storeName;
+    }
+
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
     public long getOrderId() {

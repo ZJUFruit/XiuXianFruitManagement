@@ -776,9 +776,11 @@ public class MyHttpService {
             Date odate = new Date(object.getLong("odate"));
             Date date = new Date(object.getLong("date"));
             String goodsStr = object.getString("goods");
+            String buyerName = object.getString("buyerName");
+            String storeName = object.getString("storeName");
             ArrayList<GoodsBean> goods = parseGoodsBeanFromJson(goodsStr);
 
-            OrderBean bean = new OrderBean(orderId,salerId,buyerId,price,goods,address,odate,status,date);
+            OrderBean bean = new OrderBean(orderId,salerId,storeName,buyerId,buyerName,price,goods,address,odate,status,date);
             return bean;
         } catch (JSONException e) {
             e.printStackTrace();
