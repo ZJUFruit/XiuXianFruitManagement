@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">SalerApplication</string>
+    <string name="column_fruits_management">水果管理</string>
+    <string name="column_order_management">订单管理</string>
+    <string name="column_saler_setting">商家设置</string>
+
+    <string name="setting_store_info">商店信息</string>
+    <string name="setting_bank_account">银行卡信息</string>
+    <string name="setting_account_management">账户管理</string>
+    <string name="setting_auto_take">自动接单</string>
+    <string name="setting_message_reminder">新消息提醒</string>
+
+    <string name="status_unaccepted">未接单</string>
+    <string name="status_notdelivered">未派送</string>
+    <string name="status_finished">已完成</string>
+
+    <string name="setting_store_info_name">商店名称</string>
+    <string name="setting_store_info_address">商店地址</string>
+    <string name="setting_store_info_chargeman">商店负责人</string>
+    <string name="setting_store_info_phone">商店联系方式</string>
+    <string name="setting_store_info_description">商店描述</string>
+
+    <string name="setting_bank_account_number">银行卡号</string>
+    <string name="setting_bank_account_password">银行卡密码</string>
+
+    <string name="setting_account_management_name">用户名</string>
+    <string name="setting_account_management_realname">真实姓名</string>
+    <string name="setting_account_management_phone">手机</string>
+    <string name="setting_account_management_email">邮箱</string>
+    <string name="setting_account_management_password">密码</string>
+    <string name="setting_account_management_password_confirm">确认密码</string>
+
+    <string name="change_password_old">原密码</string>
+    <string name="change_password_new">新密码</string>
+    <string name="change_password_new_confirm">确认新密码</string>
+
+    <string name="fruit_management_type">水果种类</string>
+    <string name="fruit_management_price">水果价格</string>
+
+    <string name="forget_password_name">用户名</string>
+    <string name="forget_password_email">邮箱地址</string>
+    <string name="forget_password_code">验证码</string>
+    <string name="forget_password_password">重置密码</string>
+    <string name="forget_password_password_confirm">确认密码</string>
+
+    <string name="order_detail_id">单号</string>
+    <string name="order_detail_buyer">买家</string>
+    <string name="order_detail_date">时间</string>
+    <string name="order_detail_status">状态</string>
+    <string name="order_detail_address">收货地址</string>
+    <string name="order_detail_price">金额</string>
+    <string name="order_detail_score">评分</string>
+    <string name="order_detail_comment">评论</string>
+</resources>

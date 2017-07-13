@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.fruit.salerapplication.Login">
+
+    <include layout="@layout/titlebar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/input_username"
+            android:layout_alignBottom="@+id/input_username"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="39dp"
+            android:text="用户名"
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/input_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="136dp"
+            android:layout_toEndOf="@+id/textView5"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_below="@+id/input_username"
+            android:layout_marginTop="25dp"
+            android:text="密码"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignStart="@+id/input_username"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btn_forget_password"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignEnd="@+id/input_password"
+            android:layout_below="@+id/input_password"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_basic"
+            android:text="忘记密码？"
+            android:textColor="@color/textGrey"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/textView6"
+            android:layout_below="@+id/btn_forget_password"
+            android:layout_marginTop="71dp"
+            android:background="@drawable/button_basic"
+            android:text="注册"
+            android:textColor="@color/textGrey"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/btn_register"
+            android:layout_alignEnd="@+id/btn_forget_password"
+            android:background="@drawable/button_basic"
+            android:text="登录"
+            android:textColor="@color/textGrey"
+            android:textSize="24sp"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

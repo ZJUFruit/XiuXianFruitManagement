@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fruit.salerapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="修鲜水果管家"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".SetStoreInfo">
+        </activity>
+        <activity android:name=".SetBankAccount">
+        </activity>
+        <activity android:name=".SetUserAccount">
+        </activity>
+        <activity android:name=".FruitManagement">
+        </activity>
+        <activity android:name=".ForgetPassword">
+        </activity>
+        <activity android:name=".Order">
+        </activity>
+        <activity android:name=".Scan">
+        </activity>
+        <activity android:name=".Register">
+        </activity>
+        <activity android:name=".ChangePassword">
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-sdk android:minSdkVersion="14"/>
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+
+</manifest>
