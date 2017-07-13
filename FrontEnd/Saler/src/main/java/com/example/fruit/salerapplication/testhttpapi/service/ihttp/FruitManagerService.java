@@ -25,20 +25,23 @@ public interface FruitManagerService {
     @POST("fruitmanager/user/login")
     @FormUrlEncoded
     Call<ResponseBody> login(@Field("role") String role,
-                       @Field("username")String username,
-                       @Field("password") String password,
-                       @Field("mac_id") String mac_id);
+                             @Field("username")String username,
+                             @Field("password") String password,
+                             @Field("mac_id") String mac_id);
 
 
     @POST("fruitmanager/user/modify/password")
     @FormUrlEncoded
     Call<ResponseBody> modifyPassword(@Header("token_id") String token,
-                                @Field("npassword") String npassword);
+                                      @Field("opassword")String opassword,
+                                      @Field("npassword") String npassword);
 
 
     @GET("fruitmanager/user/logout")
     Call<ResponseBody> logout(@Header("token_id") String token);
 
+    @GET("fruitmanager/user/info")
+    Call<ResponseBody> getUserInfo(@Header("token_id") String token);
 
     @POST("fruitmanager/user/findback/password")
     @FormUrlEncoded
@@ -50,10 +53,16 @@ public interface FruitManagerService {
                                  @Field("cardId")  String cardId,
                                  @Field("cardPwd") String cardPwd);
 
+    @GET("fruitmanager/account/get")
+    Call<ResponseBody> getBankAccountInfo(@Header("token_id") String token);
+
     @POST("fruitmanager/store/bind")
     @FormUrlEncoded
     Call<ResponseBody> bindSalerStore(@Header("token_id") String token,
                                 @Field("json") String json);
+
+    @GET("/fruitmanager/store/get")
+    Call<ResponseBody> getStoreInfo(@Header("token_id") String token);
 
     @GET("fruitmanager/store/list")
     Call<ResponseBody> getAllStores();
@@ -65,6 +74,10 @@ public interface FruitManagerService {
     @FormUrlEncoded
     Call<ResponseBody> addStoreReverses(@Header("token_id") String token,
                                   @Field("json") String json);
+
+
+    @GET("fruitmanager/store/reserves/get")
+    Call<ResponseBody> getStoreReverses(@Header("token_id") String token);
 
     @POST("fruitmanager/store/price/update")
     @FormUrlEncoded
