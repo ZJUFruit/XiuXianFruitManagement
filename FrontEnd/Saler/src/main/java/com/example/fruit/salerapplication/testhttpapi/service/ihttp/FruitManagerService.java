@@ -22,6 +22,11 @@ public interface FruitManagerService {
     @FormUrlEncoded
     Call<ResponseBody> register(@Field("json") String json);
 
+
+    @POST("fruitmanager/user/check/email")
+    @FormUrlEncoded
+    Call<ResponseBody> verifyEmail(@Field("email") String email);
+
     @POST("fruitmanager/user/login")
     @FormUrlEncoded
     Call<ResponseBody> login(@Field("role") String role,

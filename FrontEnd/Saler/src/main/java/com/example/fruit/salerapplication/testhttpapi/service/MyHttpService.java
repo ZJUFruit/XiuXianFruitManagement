@@ -87,7 +87,6 @@ public class MyHttpService {
                     try {
                         String responseStr = responseBody.string();
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        //TODO: 如果success为false，具体原因的获取
                         Bundle bundle = new Bundle();
                         boolean success = jsonObject.getBoolean("success");
                         bundle.putBoolean("success", success);
@@ -114,6 +113,38 @@ public class MyHttpService {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 用户注册时验证邮箱
+     * */
+    public void verifyEmail(String email){
+        Call<ResponseBody> verifyCall = fruitManagerService.verifyEmail(email);
+        verifyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    ResponseBody responseBody = response.body();
+                    try {
+                        String jsonStr = responseBody.string();
+                        JSONObject jsonObject = new JSONObject(jsonStr);
+                        Bundle bundle = new Bundle();
+                        bundle.putBoolean("success",jsonObject.getBoolean("success"));
+                        bundle.putString("message",jsonObject.getString("message"));
+                        sendMessageToUI(RequestType.USER_REGISTER_VERIFY, bundle);
+                    }catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
     }
 
     /**
