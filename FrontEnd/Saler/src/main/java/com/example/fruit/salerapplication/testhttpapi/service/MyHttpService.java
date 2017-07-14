@@ -487,8 +487,8 @@ public class MyHttpService {
                     ResponseBody responseBody = response.body();
                     try {
                         JSONObject jsonObject = new JSONObject(responseBody.string());
-                        JSONObject data = jsonObject.getJSONObject("data");
-                        ArrayList<StoreReverseBean> reverses = parseStoreReverseBeanFromJson(data.toString());
+                        JSONArray data = jsonObject.getJSONArray("data");
+                        ArrayList<StoreReverseBean> reverses = parseStoreReverseBeanFromJson(data);
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("reverses", reverses);
                         sendMessageToUI(RequestType.SALER_STORE_GET_REVERSES, bundle);
@@ -789,10 +789,10 @@ public class MyHttpService {
 
     }
 
-    private ArrayList<StoreReverseBean> parseStoreReverseBeanFromJson(String json){
+    private ArrayList<StoreReverseBean> parseStoreReverseBeanFromJson(JSONArray array){
         try{
             ArrayList<StoreReverseBean> reverses = new ArrayList<>();
-            JSONArray jsonArray = new JSONArray(json);
+            JSONArray jsonArray = array;
             for(int i=0; i<jsonArray.length(); i++){
                 JSONObject temp = jsonArray.getJSONObject(i);
                 long csid = temp.getLong("csid");
