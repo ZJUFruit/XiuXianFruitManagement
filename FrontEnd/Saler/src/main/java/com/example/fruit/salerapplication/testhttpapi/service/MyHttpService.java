@@ -824,8 +824,14 @@ public class MyHttpService {
                 String typeName = temp.getString("typeName");
                 int number = temp.getInt("number");
                 float price = (float) temp.getDouble("price");
-                String desc = temp.getString("desc");
-                float rank = (float) temp.getDouble("rank");
+                String desc = null;
+                float rank = -1;
+                if(temp.has("desc")){
+                    desc = temp.getString("desc");
+                }
+                if(temp.has("rank")){
+                    rank = (float) temp.getDouble("rank");
+                }
                 GoodsBean good = new GoodsBean(typeId,typeName,number,desc,price,rank);
                 goods.add(good);
             }
