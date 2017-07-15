@@ -80,6 +80,8 @@ public interface FruitManagerService {
     Call<ResponseBody> addStoreReverses(@Header("token_id") String token,
                                   @Field("json") String json);
 
+    @GET("fruitmanager/store/reserves/{typeId}/list")
+    Call<ResponseBody> getStoreReverseDetail(@Path("typeId")String typeId);
 
     @GET("fruitmanager/store/reserves/get")
     Call<ResponseBody> getStoreReverses(@Header("token_id") String token);

@@ -538,6 +538,44 @@ public class MyHttpService {
         });
     }
 
+    public void getStoreReversesDetailByType(String typeId){
+        Call<ResponseBody> getReserveDetailCall = fruitManagerService.getStoreReverseDetail(typeId);
+        getReserveDetailCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                ResponseBody responseBody = response.body();
+                if(response.code()==200){
+                    try {
+                        JSONArray jsonArray = new JSONArray(responseBody.string());
+                        ArrayList<ReverseDetailBean> data = new ArrayList<ReverseDetailBean>();
+                        for(int i=0; i<jsonArray.length(); i++){
+                            JSONObject temp = jsonArray.getJSONObject(i);
+                            long storeId = temp.getLong("storeId");
+                            String storeName = temp.getString("storeName");
+                            String address = temp.getString("address");
+                            int volume = temp.getInt("volume");
+                            float rank = (float) temp.getDouble("rank");
+                            ReverseDetailBean bean = new ReverseDetailBean(storeId,storeName,address,volume,rank);
+                            data.add(bean);
+                        }
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("data",data);
+                        sendMessageToUI(RequestType.BUYER_GET_REVERSES,bundle);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
+
     /**
      * 商家增加库存，通过扫描NFC芯片，最后生成一个json
      * */

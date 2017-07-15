@@ -27,4 +27,5 @@ public class RequestType {
     public static final int SALER_GET_STOREINFO      = 30;
     public static final int USER_GET_INFO            = 31;
     public static final int USER_REGISTER_VERIFY     = 32;
+    public static final int BUYER_GET_REVERSES       = 33;
 }
